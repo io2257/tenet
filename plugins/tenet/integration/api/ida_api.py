@@ -218,7 +218,7 @@ class IDAContextAPI(DisassemblerContextAPI):
 
             # fetch code segments
             seg = ida_segment.getseg(seg_address)
-            if seg.sclass != ida_segment.SEG_CODE:
+            if seg.sclass != ida_segment.SEG_CODE and seg.sclass != ida_segment.SEG_DATA:
                 continue
 
             current_address = seg_address
